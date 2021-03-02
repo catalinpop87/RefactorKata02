@@ -2,13 +2,18 @@ public class TennisGame3 implements TennisGame {
 
     private int p2;
     private int p1;
+
+    private Player player1;
+    private Player player2;
+
     private String p1N;
     private String p2N;
 
-    public TennisGame3(String p1N, String p2N) {
-        this.p1N = p1N;
-        this.p2N = p2N;
+    public TennisGame3(Player player1, Player player2) {
+        this.player1 = player1;
+        this.player2 = player2;
     }
+
 
     public String getScore() {
         String s;
@@ -24,12 +29,9 @@ public class TennisGame3 implements TennisGame {
         }
     }
 
-    public void wonPoint(String playerName) {
-        if (playerName == "player1")
-            this.p1 += 1;
-        else
-            this.p2 += 1;
-
+    @Override
+    public void wonPoint(Player player) {
+        player.wonPoint();
     }
 
 }
